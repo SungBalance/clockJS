@@ -1,19 +1,19 @@
 const toDoForm = document.querySelector(".js-toDoForm"),
-    toDoInput = toDoForm.querySelector("input")
+    toDoInput = toDoForm.querySelector("input"),
     toDoList = document.querySelector(".js-toDoList");
 
 const TODOS_LS = 'todos';
 
 let toDos = [];
 
-function deleteToDo(event){
+function deleteToDO(event){
     const btn = event.target;
-    const li = btn.parantNode;
+    const li = btn.parentNode;
     toDoList.removeChild(li);
     const cleanToDo = toDos.filter(function(toDo){
         return toDo.id !== parseInt(li.id); // change type to int
     }); // filter: make new array with what return of function is true.
-    toDos = cleanToDos;
+    toDos = cleanToDo;
     saveToDos();
 }
 
@@ -23,6 +23,7 @@ function saveToDos(){
 
 function paintToDo(text){
     const li = document.createElement("li");
+    li.classList.add('todoitem');
     const delBtn = document.createElement("button");
     const span = document.createElement("span");
     const newId = toDos.length + 1;
@@ -37,7 +38,7 @@ function paintToDo(text){
 
     toDoList.appendChild(li);
 
-    const toDoOjb = {
+    const toDoObj = {
         text: text,
         id: newId
     };

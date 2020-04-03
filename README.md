@@ -1,2 +1,2 @@
 # clockJS
- first side-project with Javascript
+ First Side-Project made with Javascript
